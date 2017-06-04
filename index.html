@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker</title>
+  </head>
+  <body>
+    <h1>Cat CLICKER!</h1>
+  <div id="catContainer">
+
+  </div>
+  	
+  	<script>
+
+
+
+  		var imageArray = [
+  							{name: 'Lulu',
+  							src: 'images/lulu-small.jpg'},
+  							{name: 'Catpedo',
+  							src: 'images/catpedo.jpg'}];
+
+		for (i = 0; i < imageArray.length; i++) {
+
+			var catBlock = '<div id= \'catUnit\'>\
+  								<div id=\'catTitle\'>Cat\'s Name</div>\
+								<div id=\'catPic\'>Image of Cat</div>\
+								<div id=\'counter\'>Counter</div>\
+							</div>'
+
+			var name = imageArray[i].title;
+			var image = new Image();
+			image.src = imageArray[i].src;
+			document.getElementById("catTitle").textContent = name;
+			document.getElementById("catPic").append(image);
+			document.getElementById("counter").append("Counter will go here");
+		}
+
+
+
+  	</script>
+  	<script src="js/jquery-3.2.1.min.js"></script>
+  </body>
+</html>
+
+<!--	<h1> Cat's Name </h1>
+	<img> Picture </img>
+	<p> "Counter: " + numberOfClicks </p>
+
+</div>
