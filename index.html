@@ -6,7 +6,9 @@
   </head>
   <body>
     <h1>Cat CLICKER!</h1>
-  <div id="catContainer">
+  <div id="Container">
+    <div id="sideBar"></div>
+    <div id="mainView"></div>
 
   </div>
   	
@@ -23,13 +25,21 @@
       var images = [];
 
       // push two images to the array
-      images.push(createImage("foo.jpg", "foo title"));
-      images.push(createImage("bar.jpg", "bar title"));
+      images.push(createImage("images/blackie.jpg", "Blackie"));
+      images.push(createImage("images/catpedo.jpg", "Catpedo"));
+      images.push(createImage("images/cute.jpg", "Cutie"));
+      images.push(createImage("images/funny.jpg", "FunnyBoy"));
+      images.push(createImage("images/hairless.jpg", "Hairless"));
+      images.push(createImage("images/lulu.jpg", "Lulu"));
+      images.push(createImage("images/pudge.jpg", "Pudge"));
+      images.push(createImage("images/relaxedBoy.jpg", "RelaxedBoy"));
+      images.push(createImage("images/tabby.jpg", "Tabby"));
+      images.push(createImage("images/trio.jpg", "Trio"));
+      images.push(createImage("images/wolfy.jpg", "wolfy"));
 
       // output
-      console.log(images);
-
-
+      //console.log(images);
+        $( "#sideBar").append("<b>test</b>");
 
 
   	</script>
