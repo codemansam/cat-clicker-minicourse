@@ -23,6 +23,7 @@
         img.src = src;
         img.alt = title;
         img.title = title;
+        img.count = 0; // will hold the number of clicks for that
         return img; 
       };
 
@@ -44,17 +45,27 @@
       // console.log(images);
 
       function appendItemsToList() {
-        console.log("x");
+        //console.log("x");
         for (i = 0; i < images.length; i++) {
           var title = images[i].title;
+          var src = images[i].src;
           var lineBreak = '<br>';
           console.log(title);
-          $( "#list").append(title);
-          $( "#list").append(lineBreak);
+          //$( "#list").append(title);
+          //$( "#list").append(lineBreak);
+          createListBlock(title, src);
       }
   }
+      function createListBlock(title, src) {
+        var listItem = document.createElement("li");
+        var node = document.createTextNode(images[i].title);
+        listItem.appendChild(node);
+        var element = document.getElementById("sideBar");
+        element.append(listItem);
+
+      }
   appendItemsToList();
-  console.log("appendItemsToList fired");
+  //console.log("appendItemsToList fired");
   	</script>
 
   </body>
