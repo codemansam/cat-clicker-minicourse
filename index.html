@@ -12,6 +12,9 @@
       <ul id="list"></ul>
     </div>
     <div id="mainView"></div>
+      <h2>Title</h2>
+      <img>picture</img>
+      <p>Counter</p>
 
   </div>
   	
@@ -23,7 +26,7 @@
         img.src = src;
         img.alt = title;
         img.title = title;
-        img.count = 0; // will hold the number of clicks for that
+        img.count = 0; // will hold the number of clicks
         return img; 
       };
 
@@ -41,7 +44,7 @@
       images.push(createImage("images/relaxedBoy.jpg", "RelaxedBoy"));
       images.push(createImage("images/tabby.jpg", "Tabby"));
       images.push(createImage("images/trio.jpg", "Trio"));
-      images.push(createImage("images/wolfy.jpg", "wolfy"));
+      images.push(createImage("images/wolfy.jpg", "Wolfy"));
       // console.log(images);
 
       function appendItemsToList() {
@@ -65,6 +68,16 @@
 
       }
   appendItemsToList();
+
+  function clicked() {
+  console.log(this.title);
+  }
+
+  $( "li").on('click', function() {
+    $( this ).clicked()
+  })
+
+
   //console.log("appendItemsToList fired");
   	</script>
 
