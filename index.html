@@ -8,24 +8,28 @@
   <body>
     <h1>Cat CLICKER!</h1>
   <div id="Container">
-    <div id="sideBar"></div>
+    <div id="sideBar">
+      <ul id="list"></ul>
+    </div>
     <div id="mainView"></div>
 
   </div>
   	
   	<script>
+      // Function to simplify adding more images
+      // Pass in an image file location and the title
       var createImage = function(src, title) {
-        var img   = new Image();
-        img.src   = src;
-        img.alt   = title;
+        var img = new Image();
+        img.src = src;
+        img.alt = title;
         img.title = title;
         return img; 
       };
 
-      // array of images
+      // Stores our cat images
       var images = [];
 
-      // push two images to the array
+      // push images to the array
       images.push(createImage("images/blackie.jpg", "Blackie"));
       images.push(createImage("images/catpedo.jpg", "Catpedo"));
       images.push(createImage("images/cute.jpg", "Cutie"));
@@ -37,12 +41,20 @@
       images.push(createImage("images/tabby.jpg", "Tabby"));
       images.push(createImage("images/trio.jpg", "Trio"));
       images.push(createImage("images/wolfy.jpg", "wolfy"));
+      // console.log(images);
 
-      // output
-      //console.log(images);
-      for (i = 0; i < images.length; i++) {
-      $( "#sideBar").append("<b>test</b>");
-    }
+      function appendItemsToList() {
+        console.log("x");
+        for (i = 0; i < images.length; i++) {
+          var title = images[i].title;
+          var lineBreak = '<br>';
+          console.log(title);
+          $( "#list").append(title);
+          $( "#list").append(lineBreak);
+      }
+  }
+  appendItemsToList();
+  console.log("appendItemsToList fired");
   	</script>
 
   </body>
