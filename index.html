@@ -12,10 +12,15 @@
       <ul id="list"></ul>
     </div>
     <div id="mainView"></div>
-      <h2>Title</h2>
-      <img>picture</img>
-      <p>Counter</p>
-
+      <div id="title">
+        <h2>Title</h2>
+      </div>
+      <div id="picture">
+  
+      </div>
+      <div id="counter">
+        <p>Counter</p>
+      </div>
   </div>
   	
   	<script>
@@ -52,7 +57,6 @@
         for (i = 0; i < images.length; i++) {
           var title = images[i].title;
           var src = images[i].src;
-          var lineBreak = '<br>';
           console.log(title);
           //$( "#list").append(title);
           //$( "#list").append(lineBreak);
@@ -69,14 +73,18 @@
       }
   appendItemsToList();
 
-  function clicked() {
-  console.log(this.title);
-  }
+
 
   $( "li").on('click', function() {
-    $( this ).clicked()
+    test(this);
+    
   })
 
+  function test(li) {
+    var title = li.innerHTML;
+
+    console.log(title);
+  }
 
   //console.log("appendItemsToList fired");
   	</script>
