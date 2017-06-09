@@ -12,14 +12,15 @@
       <ul id="list"></ul>
     </div>
     <div id="mainView"></div>
-      <div id="title">
-        <h2>Title</h2>
+      <div>
+        <h2 id="title">Title</h2>
       </div>
       <div id="picture">
+        <img id="mainImage" src=""></img>
   
       </div>
-      <div id="counter">
-        <p>Counter</p>
+      <div>
+        <p id="counter">Counter</p>
       </div>
   </div>
   	
@@ -37,6 +38,10 @@
 
       // Stores our cat images
       var images = [];
+      var catClicks = [];
+      var currentCat = -1;
+
+
 
       // push images to the array
       images.push(createImage("images/blackie.jpg", "Blackie"));
@@ -46,7 +51,7 @@
       images.push(createImage("images/hairless.jpg", "Hairless"));
       images.push(createImage("images/lulu.jpg", "Lulu"));
       images.push(createImage("images/pudge.jpg", "Pudge"));
-      images.push(createImage("images/relaxedBoy.jpg", "RelaxedBoy"));
+      images.push(createImage("images/relaxedBoy.jpg", "Relaxed Boy"));
       images.push(createImage("images/tabby.jpg", "Tabby"));
       images.push(createImage("images/trio.jpg", "Trio"));
       images.push(createImage("images/wolfy.jpg", "Wolfy"));
@@ -57,36 +62,39 @@
         for (i = 0; i < images.length; i++) {
           var title = images[i].title;
           var src = images[i].src;
+          catClicks[i] = 0;
           console.log(title);
           //$( "#list").append(title);
           //$( "#list").append(lineBreak);
-          createListBlock(title, src);
-      }
-  }
-      function createListBlock(title, src) {
         var listItem = document.createElement("li");
-        var node = document.createTextNode(images[i].title);
+        listItem.id = i;
+        var node = document.createTextNode(title);
         listItem.appendChild(node);
         var element = document.getElementById("sideBar");
         element.append(listItem);
-
       }
+  }
+
   appendItemsToList();
 
-
-
   $( "li").on('click', function() {
-    test(this);
+    currentCat = this.id;
+    $( "#title" ).text(images[currentCat].title);
+    $( "#mainImage").attr('src', images[currentCat].src);
+    var currentCount = catClicks[currentCat];
+    $( "#counter").text("Counter " + currentCount);
+    console.log(currentCat);
     
   })
 
-  function test(li) {
-    var title = li.innerHTML;
+  $( "#mainImage").on('click', function() {
 
-    console.log(title);
-  }
+      catClicks[currentCat] = catClicks[currentCat] + 1;
+      $( "#counter").text("Counter " + catClicks[currentCat]);
+  })
 
   //console.log("appendItemsToList fired");
+
   	</script>
 
   </body>
